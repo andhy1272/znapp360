@@ -1,0 +1,193 @@
+<?php
+/**
+ * Magento
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the Academic Free License (AFL 3.0)
+ * that is bundled with this package in the file LICENSE_AFL.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://opensource.org/licenses/afl-3.0.php
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@magento.com so we can send you a copy immediately.
+ *
+ * DISCLAIMER
+ *
+ * Do not edit or add to this file if you wish to upgrade Magento to newer
+ * versions in the future. If you wish to customize Magento for your
+ * needs please refer to http://www.magento.com for more information.
+ *
+ * @category    design
+ * @package     rwd_default
+ * @copyright   Copyright (c) 2006-2016 X.commerce, Inc. and affiliates (http://www.magento.com)
+ * @license     http://opensource.org/licenses/afl-3.0.php  Academic Free License (AFL 3.0)
+ */
+
+/**
+ * Product media data template
+ *
+ * @see Mage_Catalog_Block_Product_View_Media
+ */
+
+/* @var $this Mage_Catalog_Block_Product_View_Media */
+?>
+<?php
+    $_product = $this->getProduct();
+    $_helper = $this->helper('catalog/output');
+?>
+<div class="product-image product-image-zoom">
+    <div class="product-image-gallery">
+        <?php
+            if($galleryPath = $_product->getGalleryPath()):
+                $galleryPath = Mage::getBaseUrl('media') . "vault360/" . $galleryPath;
+        ?>
+        	<!--
+            <img src="<?php echo $galleryPath; ?>/001.png" id="image-main" class="reel" width="100%"
+                data-images="<?php echo $galleryPath; ?>/###.png"
+                data-frames="18" 
+                data-frame="1"
+                data-responsive="true">
+            -->
+                
+            
+            <img src="<?php echo $galleryPath; ?>/001.jpg" id="image-main" class="reel" width="800" height="534"
+                data-images="<?php echo $galleryPath; ?>/###.jpg"
+                data-frames="18" 
+                data-frame="1"
+                data-responsive="true"
+                data-rows="5"
+                data-row="3" 
+            	data-indicator="2" 
+            	data-cursor="hand"
+            	data-revolution="800" 
+            />
+                            
+
+            <span class="add-image">Add Image</span>
+
+            <script type="text/javascript">
+                $j(document).ready(function(){
+                    
+                    $j(".add-image").click(function() {
+                        addShot();
+                    });
+
+                    $j(".shots-list").on("click", ".shot span", function() {
+                        removeShot($j(this).parent());
+                    });
+
+
+                    function addShot(){
+                        pos = "Position-" + $j('#image-main').attr('position');
+
+                        $j('#downloadable-links-list li').each(function() {
+                            curr_elm = $j(this);
+
+                            label = curr_elm.find('label').html();
+                            label = label.trim();
+
+                            if(label == pos){
+                                curr_chk = curr_elm.find('input[type="checkbox"]');
+
+                                if( (curr_chk.length) && !(curr_chk.prop('checked')) ){
+                                    curr_chk.trigger( "click" );
+
+                                    _html = '<div class="shot" position="' + $j('#image-main').attr('position') + '">';
+                                    _html += '<a class="fancybox" rel="gallery1" href="' + $j('#image-main').attr('src') + '">';
+                                    _html += '<img src="' + $j('#image-main').attr('src') + '" alt="" />';
+                                    _html += '</a>';
+                                    _html += '<span title="Remove">x</span>';
+                                    _html += '</div>';
+
+                                    $j('.shots-list').append(_html);
+                                } 
+                                else {
+                                    $j('.shots-list .shot[position =' + $j('#image-main').attr('position') + ']').addClass('RED');
+                                }
+
+                                return false;
+                            }
+                        }); 
+                    }
+
+                    function removeShot(shot){
+                        pos = "Position-" + shot.attr('position');
+
+                        $j('#downloadable-links-list li').each(function() {
+                            curr_elm = $j(this);
+
+                            label = curr_elm.find('label').html();
+                            label = label.trim();
+
+                            if(label == pos){
+                                curr_chk = curr_elm.find('input[type="checkbox"]');
+
+                                if( (curr_chk.length) && (curr_chk.prop('checked')) ){
+                                    curr_chk.trigger( "click" );
+
+                                    shot.remove();
+                                } 
+                                else {
+                                    shot.remove();
+                                }  
+
+                                return false;
+                            }
+                        }); 
+                    }
+                    
+            
+                }); //end document ready
+                
+                
+                
+                $j(window).load(function() {
+                	_cubeHTML = '<div class="cube">';
+                	_cubeHTML += '<img src="<?php echo $this->getSkinUrl('images/cube.png') ?>" alt="" />';
+                	_cubeHTML += '</div>';
+
+                	$j('#image-main-reel').append(_cubeHTML);
+                });
+            </script>
+
+        <?php else: ?>
+
+            <img id="image-main"
+                 class="gallery-image visible"
+                 src="<?php echo $this->helper('catalog/image')->init($_product, 'image') ?>"
+                 alt="<?php echo $this->escapeHtml($this->getImageLabel()) ?>"
+                 title="<?php echo $this->escapeHtml($this->getImageLabel()); ?>" />
+
+            <?php $i=0; foreach ($this->getGalleryImages() as $_image): ?>
+                <?php if ($this->isGalleryImageVisible($_image)): ?>
+                <img id="image-<?php echo $i; ?>"
+                     class="gallery-image"
+                     src="<?php echo $this->getGalleryImageUrl($_image); ?>"
+                     data-zoom-image="<?php echo  $this->getGalleryImageUrl($_image); ?>" />
+                <?php endif; ?>
+            <?php $i++; endforeach; ?>
+
+        <?php endif; ?>
+
+    </div>
+</div>
+
+<?php if (count($this->getGalleryImages()) > 0): ?>
+<div class="more-views">
+    <ul class="product-image-thumbs">
+    <?php $i=0; foreach ($this->getGalleryImages() as $_image): ?>
+        <?php if ($this->isGalleryImageVisible($_image)): ?>
+        <li>
+            <a class="thumb-link" href="#" title="<?php echo $this->escapeHtml($_image->getLabel()) ?>" data-image-index="<?php echo $i; ?>">
+                <img src="<?php echo $this->helper('catalog/image')->init($this->getProduct(), 'thumbnail', $_image->getFile())->resize(75); ?>"
+                     width="75" height="75" alt="<?php echo $this->escapeHtml($_image->getLabel()) ?>" />
+            </a>
+        </li>
+        <?php endif; ?>
+    <?php $i++; endforeach; ?>
+    </ul>
+</div>
+<?php endif; ?>
+
+<?php echo $this->getChildHtml('after'); ?>
