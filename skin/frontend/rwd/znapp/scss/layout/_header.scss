@@ -32,7 +32,7 @@
     left: 0;
     right: 0;
     width: 100%;
-    height: 50px;
+    height: 60px;
     margin: 0 auto;
     padding: 0 $trim;
     position: fixed;
@@ -90,7 +90,7 @@
 @include bp(min-width, $bp-medium + 1) {
 
     .logo {
-        max-width: 130px;
+        max-width: 195px;
 
         .small {
             display: none;
