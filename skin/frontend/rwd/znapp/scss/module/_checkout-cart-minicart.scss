@@ -56,7 +56,6 @@
         display: none;
     }
     .block-subtitle {
-        color: #50A4CF;
         font-family: $f-stack-special;
         font-size: 10px;
         font-weight: bold;
@@ -159,7 +158,7 @@
         line-height: 2em;
 
         .label {
-            color: white;
+            padding-right: 5px;
             text-transform: uppercase;
         }
         .price {
@@ -254,7 +253,8 @@
     .header-minicart {
         .subtotal {
             .label {
-                color: $c-text;
+                padding-right: 5px;
+                text-transform: uppercase;
             }
         }
         .minicart-wrapper {

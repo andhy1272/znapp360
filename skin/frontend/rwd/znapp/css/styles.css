@@ -7586,7 +7586,6 @@ div.paypal-logo {
   .header-minicart .block-cart {
     display: none; }
   .header-minicart .block-subtitle {
-    color: #50A4CF;
     font-family: "Ubuntu", "Raleway", "Helvetica Neue", Verdana, Arial, sans-serif;
     font-size: 10px;
     font-weight: bold;
@@ -7659,7 +7658,7 @@ div.paypal-logo {
     text-align: center;
     line-height: 2em; }
     .header-minicart .subtotal .label {
-      color: white;
+      padding-right: 5px;
       text-transform: uppercase; }
     .header-minicart .subtotal .price {
       color: #5d6a7f; }
@@ -7718,7 +7717,8 @@ div.paypal-logo {
     z-index: 1; } }
 @media only screen and (max-width: 770px) {
   .header-minicart .subtotal .label {
-    color: #5d6a7f; }
+    padding-right: 5px;
+    text-transform: uppercase; }
   .header-minicart .minicart-wrapper:before {
     background-color: #EDEDED; }
   .header-minicart .quantity-button {
