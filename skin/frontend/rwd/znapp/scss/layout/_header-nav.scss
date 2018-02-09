@@ -114,9 +114,14 @@ $nav-primary-height: 50px;
         position: relative;
         display: block;
         color: $c-text;
-        height: 50px;
-        line-height: $nav-primary-height;
+        height: 60px;
+        line-height: 60px;
         font-family: $f-stack-special;
+
+        &.first{
+            margin-left: 20px;
+            border-left: 1px solid #EDEDED;
+        }
     }
 
     li {

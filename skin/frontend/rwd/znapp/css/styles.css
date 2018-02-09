@@ -3022,9 +3022,12 @@ a.skip-link {
   position: relative;
   display: block;
   color: #5d6a7f;
-  height: 50px;
-  line-height: 50px;
+  height: 60px;
+  line-height: 60px;
   font-family: "Ubuntu", "Raleway", "Helvetica Neue", Verdana, Arial, sans-serif; }
+  .nav-primary a.first {
+    margin-left: 20px;
+    border-left: 1px solid #EDEDED; }
 .nav-primary li {
   position: relative; }
 .nav-primary li.level1 a {
@@ -3166,12 +3169,12 @@ a.skip-link {
 @media only screen and (min-width: 771px) {
   #header-search {
     position: absolute;
-    top: 10px;
+    top: 15px;
     right: 0;
     left: 0;
     margin: 0 auto;
     width: 15%;
-    height: 50px;
+    height: 40px;
     padding: 0; } }
 /* ============================================ *
  * Search Input
@@ -3272,7 +3275,7 @@ a.skip-link {
   position: relative;
   display: block;
   padding: 0 10px;
-  line-height: 50px;
+  line-height: 60px;
   text-align: center; }
 
 #header-account a:hover {
@@ -3293,7 +3296,7 @@ a.skip-link {
 @media only screen and (min-width: 771px) {
   .skip-cart {
     width: auto;
-    padding: 8px 0 0 10px; }
+    padding: 12px 0 0 10px; }
 
   #header-cart.skip-active {
     background: #FFF;
