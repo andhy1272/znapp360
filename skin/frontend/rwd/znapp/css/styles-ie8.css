@@ -2470,6 +2470,7 @@ body {
   min-width: 100px;
   min-height: 44px;
   text-align: center;
+  max-width: 195px;
   padding: 10px 10px 0 0; }
   .logo img {
     max-width: 100%; }
@@ -2563,6 +2564,9 @@ a.skip-link {
   top: 0px;
   right: 0px; }
 
+@media only screen and (max-width: 770px) {
+  #header-account .links .first {
+    display: none; } }
 /* ============================================ *
  * Nav - Skip Link
  * ============================================ */
@@ -2623,6 +2627,7 @@ a.skip-link {
   display: block; }
 
 .nav-primary li.level0 > a {
+  display: block;
   text-transform: uppercase; }
 
 /* ============================================ *
@@ -2638,6 +2643,7 @@ a.skip-link {
   /* Correct menus that will hang off the page (class added by js) */
   /* Level 1+ */ }
   .nav-primary a.level0 {
+    display: block;
     padding: 0 25px; }
   .nav-primary li.level0,
   .nav-primary a.level0 {
@@ -2692,6 +2698,47 @@ a.skip-link {
 .nav-primary li.menu-active > ul {
   display: block; }
 
+.mobile-menu-opener {
+  float: left;
+  height: 60px;
+  display: none;
+  cursor: pointer;
+  line-height: 60px;
+  overflow: hidden; }
+  .mobile-menu-opener .icon {
+    width: 22px;
+    float: left;
+    margin-top: 20px;
+    margin-right: 10px; }
+    .mobile-menu-opener .icon .line {
+      width: 100%;
+      height: 3px;
+      margin: 3px 0;
+      display: block;
+      background: #5d6a7f; }
+  .mobile-menu-opener span {
+    text-transform: uppercase; }
+
+@media only screen and (max-width: 1050px) {
+  #header-nav {
+    width: 0;
+    top: 0px;
+    left: 0px;
+    bottom: 0px;
+    position: fixed;
+    max-width: 250px;
+    background: #FFF;
+    overflow: hidden;
+    border-right: 1px solid #EDEDED;
+    box-shadow: inset 15px 14px 23px -25px #5d6a7f, 0 0 50px #5d6a7f; }
+    #header-nav #nav {
+      width: 250px; }
+    #header-nav .nav-primary li {
+      display: block;
+      border-bottom: 1px solid #EDEDED; }
+
+  .mobile-menu-opener {
+    display: block; } }
 /* ============================================ *
  * Search - Skip Link
  * ============================================ */
@@ -2767,6 +2814,25 @@ a.skip-link {
   margin-top: -13px;
   margin-left: -13px; }
 
+@media only screen and (max-width: 1300px) {
+  #header-search {
+    width: 20%;
+    left: inherit;
+    right: 200px; } }
+@media only screen and (max-width: 1000px) {
+  #header-search {
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 2;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    background: rgba(0, 0, 0, 0.7); }
+    #header-search form {
+      padding: 20px;
+      margin-top: 80px; } }
 /* ============================================ *
  * Header - Account
  * ============================================ */

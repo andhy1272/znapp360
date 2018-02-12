@@ -40,6 +40,41 @@
             <?php echo $this->getChildHtml('topMenu') ?>
         </div>
 
+        <div class="mobile-menu-opener">
+            <div class="icon">
+                <span class="line"></span>
+                <span class="line"></span>
+                <span class="line"></span>
+            </div>
+            <span>Menu</span>
+        </div>
+
+        <script type="text/javascript">
+            $j(document).ready(function(){
+
+                $j(".mobile-menu-opener").click(function(e){
+                    $j("#header-nav").animate({
+                        width: "250"
+                    }, 500).addClass('open');
+                    
+                    e.stopPropagation();
+                });
+
+                $j("#header-nav").click(function(e){                    
+                    e.stopPropagation();
+                });
+
+                $j("body").click(function(){
+                    if($j("#header-nav").hasClass('open')){
+                        $j("#header-nav").animate({
+                            width: "0"
+                        }, 500).removeClass('open');
+                    }
+                });
+
+            });
+        </script>
+
         <!-- Search -->
         <div id="header-search">
             <?php echo $this->getChildHtml('topSearch') ?>

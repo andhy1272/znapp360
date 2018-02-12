@@ -67,6 +67,7 @@
     min-width: 100px;
     min-height: 44px;
     text-align: center;
+    max-width: 195px;
     padding: $gap $gap 0 0;
 
     img {
@@ -278,4 +279,19 @@ a.skip-link {
     @include bp(max-width, $bp-medium) {
         position: static;
     }
+}
+
+
+
+@media only screen and (max-width: 770px) {
+        
+    #header-account{
+        .links{
+            .first{
+                display: none;
+            }
+        }
+    }
+
+
 }
