@@ -40,7 +40,11 @@
     <div class="product-image-gallery">
         <?php
             if($galleryPath = $_product->getGalleryPath()):
-                $galleryPath = Mage::getBaseUrl('media') . "znapp360/" . $galleryPath;
+                $angle_type = $_product->getAttributeText('angle_type');
+
+                $galleryPath = Mage::getBaseUrl('media') . "znapp360/" . $angle_type . "/" . $galleryPath;
+
+
         ?>
         	<!--
             <img src="<?php echo $galleryPath; ?>/001.png" id="image-main" class="reel" width="100%"
@@ -50,19 +54,33 @@
                 data-responsive="true">
             -->
                 
-            
-            <img src="<?php echo $galleryPath; ?>/001.jpg" id="image-main" class="reel" width="800" height="534"
-                data-images="<?php echo $galleryPath; ?>/###.jpg"
-                data-frames="18" 
-                data-frame="1"
-                data-responsive="true"
-                data-rows="5"
-                data-row="3" 
-            	data-indicator="2" 
-            	data-cursor="hand"
-            	data-revolution="800" 
-            />
-                            
+            <?php if($angle_type == "360"){ ?>
+                <img src="<?php echo $galleryPath; ?>/001.jpg" id="image-main" class="reel" width="800" height="534"
+                    data-images="<?php echo $galleryPath; ?>/###.jpg"
+                    data-frames="18" 
+                    data-frame="1"
+                    data-responsive="true"
+                    data-rows="5"
+                    data-row="3" 
+                	data-indicator="2" 
+                	data-cursor="hand"
+                	data-revolution="800" 
+                />
+
+            <?php } else {?>
+                <img src="<?php echo $galleryPath; ?>/001.jpg" id="image-main" class="reel" width="800" height="534"
+                    data-images="<?php echo $galleryPath; ?>/###.jpg"
+                    data-frames="1" 
+                    data-frame="1"
+                    data-responsive="true"
+                    data-rows="7"
+                    data-row="3" 
+                    data-indicator="2" 
+                    data-cursor="hand"
+                    data-revolution="800" 
+                />
+
+            <?php } ?>  
 
             <span class="add-image">Add Image</span>
 
