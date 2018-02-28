@@ -24,7 +24,6 @@
 	      </reference>
     </catalog_category_view>
 
-
     <catalogsearch_result_index>
         <reference name="root">
             <action method="setTemplate"><template>page/1column.phtml</template></action>

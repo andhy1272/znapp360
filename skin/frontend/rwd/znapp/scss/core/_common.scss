@@ -1569,6 +1569,10 @@ span.weee {
     background: #FFFFFF;
 }
 
+.product-collateral.tabs{
+    display: none;
+}
+
 /* -------------------------------------------- *
  * Toolbar
  */
@@ -2119,7 +2123,86 @@ body.customer-account .data-table {
  	bottom: 20px;
  }
  
- 
- 
+
+
+ /* ============================================ *
+ * CUSTOM
+ * ============================================ */
+ .product-view .add-to-cart .qty-wrapper{
+    display: none;
+ }
+
+
+ .product-view {
+    .block-related{
+        width: 100% !important;
+    
+        .block-subtitle{
+            display: none;
+        }
+
+        .mini-products-list{
+            li.item{
+                width: 15%;
+                float: left;
+                clear: none;
+                margin: 0 2.5% 20px;
+
+                .product{
+                    margin: 0;
+
+                    a.product-image{
+                        width: 100%;
+                        margin-bottom: 10px;
+
+                        img{
+                            width: 100%;
+                            height: auto;
+                        }
+                    }
+
+                    .product-details{
+                        width: 100%;
+                        margin: 0;
+                        text-align: center;
+
+                        .price-box{
+                            span{
+                                float: none;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+@media only screen and (max-width: 1200px){
+    .product-view {
+        .block-related{
+            .mini-products-list{
+                li.item{
+                    width: 20%;
+                }
+            }
+        }
+    }
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
  
  

@@ -782,7 +782,6 @@
     background-color: $c-module-background;
     padding: 15px 20px;
     border: 1px solid $c-fieldset-border;
-    border-top: 0;
     margin-bottom: $box-spacing;
 }
 
@@ -920,3 +919,21 @@
         display: none;
     }
 }
+
+
+
+/* -------------------------------------------- *
+ * Product pages
+ */
+#product-options-wrapper.product-options{
+    padding: 0;
+    border: 0 none;    
+}
+
+#product-options-wrapper dl{
+    display: none;
+}
+
+
+
+

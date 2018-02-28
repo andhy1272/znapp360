@@ -1792,6 +1792,9 @@ span.weee {
   margin-bottom: 10px;
   background: #FFFFFF; }
 
+.product-collateral.tabs {
+  display: none; }
+
 /* -------------------------------------------- *
  * Toolbar
  */
@@ -2263,6 +2266,39 @@ body.customer-account .data-table .show-details .summary-collapse:hover:before {
   left: 20px;
   bottom: 20px; }
 
+/* ============================================ *
+* CUSTOM
+* ============================================ */
+.product-view .add-to-cart .qty-wrapper {
+  display: none; }
+
+.product-view .block-related {
+  width: 100% !important; }
+  .product-view .block-related .block-subtitle {
+    display: none; }
+  .product-view .block-related .mini-products-list li.item {
+    width: 15%;
+    float: left;
+    clear: none;
+    margin: 0 2.5% 20px; }
+    .product-view .block-related .mini-products-list li.item .product {
+      margin: 0; }
+      .product-view .block-related .mini-products-list li.item .product a.product-image {
+        width: 100%;
+        margin-bottom: 10px; }
+        .product-view .block-related .mini-products-list li.item .product a.product-image img {
+          width: 100%;
+          height: auto; }
+      .product-view .block-related .mini-products-list li.item .product .product-details {
+        width: 100%;
+        margin: 0;
+        text-align: center; }
+        .product-view .block-related .mini-products-list li.item .product .product-details .price-box span {
+          float: none; }
+
+@media only screen and (max-width: 1200px) {
+  .product-view .block-related .mini-products-list li.item {
+    width: 20%; } }
 /* ============================================ *
  * FORMS - COMMON
  * ============================================ */
@@ -4894,7 +4930,6 @@ p.product-name {
   background-color: #F4F4F4;
   padding: 15px 20px;
   border: 1px solid #CCCCCC;
-  border-top: 0;
   margin-bottom: 10px; }
 
 .product-options-bottom:after {
@@ -5004,6 +5039,16 @@ p.product-name {
   margin-top: 20px; }
   .box-up-sell .ratings {
     display: none; }
+
+/* -------------------------------------------- *
+ * Product pages
+ */
+#product-options-wrapper.product-options {
+  padding: 0;
+  border: 0 none; }
+
+#product-options-wrapper dl {
+  display: none; }
 
 /* ============================================ *
  * Catalog - MSRP MAP Popup
