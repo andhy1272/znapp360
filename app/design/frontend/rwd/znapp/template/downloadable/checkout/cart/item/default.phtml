@@ -62,7 +62,9 @@ $canApplyMsrp = Mage::helper('catalog')->canApplyMsrp($_item->getProduct(), Mage
 
     <?php
         $galleryPath = Mage::getModel('catalog/product')->load($_item->getProduct()->getId())->getGalleryPath(); 
-        $galleryPath = Mage::getBaseUrl('media') . "znapp360/" . $galleryPath;
+        $angle_type = Mage::getModel('catalog/product')->load($_item->getProduct()->getId())->getAttributeText('angle_type'); 
+
+        $galleryPath = Mage::getBaseUrl('media') . "znapp360/" . $angle_type . "/" . $galleryPath;
     ?>
 
     <!-- downloadable -->

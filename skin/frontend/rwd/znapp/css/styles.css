@@ -5492,7 +5492,10 @@ p.product-name {
       border-radius: 0;
       margin-bottom: 10px;
       text-align: center;
-      width: 3.2em; }
+      width: 3.2em;
+      display: none; }
+    .cart-table .product-cart-actions .cart-links {
+      display: none; }
     .cart-table .product-cart-actions .button {
       margin-bottom: 5px; }
   .cart-table .item-options {
